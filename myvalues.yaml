@@ -1,0 +1,2 @@
+controller:
+  ingressClass: test-nginx
