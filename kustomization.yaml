@@ -3,6 +3,7 @@ kind: Kustomization
 resources:
   - helmrelease.yaml
   - helmrepository.yaml
+  - namespace.yaml
 configMapGenerator:
   - name: ingress-nginx-values
     namespace: flux-config

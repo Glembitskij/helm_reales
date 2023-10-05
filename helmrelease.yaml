@@ -4,7 +4,7 @@ metadata:
   name: ingress-nginx
   namespace: flux-config
 spec:
-  #targetNamespace: omni
+  targetNamespace: mynamespace
   releaseName: ingress-nginx
   interval: 1h
   chart:
