@@ -5,7 +5,7 @@ resources:
   - helmrepository.yaml
   - namespace.yaml
 configMapGenerator:
-  - name: ingress-nginx-values
+  - name: elastic-operator-values
     namespace: flux-config
     files:
       - myvalues.yaml=myvalues.yaml
