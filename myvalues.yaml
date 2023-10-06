@@ -1,2 +1,15 @@
-controller:
-  ingressClass: test-nginx
+managedNamespaces: [mynamespace]
+
+createClusterScopedResources: false
+
+config:
+  # no RBAC access to cluster-wide storage classes, hence disable storage class validation
+  validateStorageClass: false
+
+webhook:
+  enabled: false
+
+podAnnotations:
+  sidecar.istio.io/inject: "true"
+  traffic.sidecar.istio.io/includeInboundPorts: "*"
+  traffic.sidecar.istio.io/excludeInboundPorts: "9443, 5601"

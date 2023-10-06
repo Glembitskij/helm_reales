@@ -5,4 +5,4 @@ metadata:
   namespace: flux-config
 spec:
   interval: 1h
-  url: https://kubernetes.github.io/ingress-nginx
+  url: https://helm.elastic.co

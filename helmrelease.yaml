@@ -5,16 +5,16 @@ metadata:
   namespace: flux-config
 spec:
   targetNamespace: mynamespace
-  releaseName: ingress-nginx
+  releaseName: elastic-operator
   interval: 1h
   chart:
     spec:
-      chart: ingress-nginx
-      version: "4.7.1"
+      chart: elastic/eck-operator
+      version: "2.9.0"
       sourceRef:
         kind: HelmRepository
-        name: ingress-nginx
+        name: elastic-operator
   valuesFrom:
     - kind: ConfigMap
-      name: ingress-nginx-values
+      name: elastic-operator-values
       valuesKey: myvalues.yaml
