@@ -1,12 +1,12 @@
 apiVersion: helm.toolkit.fluxcd.io/v2beta1
 kind: HelmRelease
 metadata:
-  name: ingress-nginx
+  name: elastic-operator
   namespace: flux-config
 spec:
   targetNamespace: mynamespace
   releaseName: elastic-operator
-  interval: 1h
+  interval: 1m
   chart:
     spec:
       chart: elastic/eck-operator
