@@ -1,0 +1,21 @@
+eck-elasticsearch:
+  version: 8.9.0
+  nodeSets:
+    - name: node
+      count: 1
+      config:
+        node.store.allow_mmap: false
+      volumeClaimTemplates:
+        - metadata:
+            name: elasticsearch-data
+          spec:
+            accessModes:
+              - ReadWriteOnce
+            resources:
+              requests:
+                storage: 128Gi
+            storageClassName: managed-premium
+  http:
+    tls:
+      selfSignedCertificate:
+        disabled: false
