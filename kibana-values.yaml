@@ -1,0 +1,17 @@
+eck-kibana:
+  spec:
+    version: 8.7.0
+    count: 1
+    elasticsearchRef:
+      name: es-quickstart-eck-elasticsearch
+      # namespace: default
+    http:
+      #service:
+      #  spec:
+      #    # Type of service to deploy for Kibana.
+      #    # This deploys a load balancer in a cloud service provider, where supported.
+      #    #
+      #    type: LoadBalancer
+      tls:
+        selfSignedCertificate:
+          disabled: true
