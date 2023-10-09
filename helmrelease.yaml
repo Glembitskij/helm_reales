@@ -10,7 +10,7 @@ spec:
   interval: 5m
   chart:
     spec:
-      chart: elastic/eck-operator
+      chart: eck-operator
       version: "2.9.0"
       sourceRef:
         kind: HelmRepository
@@ -33,7 +33,7 @@ spec:
   interval: 5m
   chart:
     spec:
-      chart: elastic/eck-stack
+      chart: eck-stack
       version: "0.7.0"
       sourceRef:
         kind: HelmRepository
