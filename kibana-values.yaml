@@ -1,6 +1,6 @@
 eck-kibana:
+  version: 8.9.0
   spec:
-    version: 8.7.0
     count: 1
     elasticsearchRef:
       name: es-quickstart-eck-elasticsearch
