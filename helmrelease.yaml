@@ -7,7 +7,7 @@ metadata:
 spec:
   targetNamespace: mynamespace
   releaseName: elastic-operator
-  interval: 5m
+  interval: 1m
   chart:
     spec:
       chart: eck-operator
@@ -30,7 +30,7 @@ spec:
     - name: elastic-operator
   targetNamespace: mynamespace
   releaseName: es-quickstart
-  interval: 5m
+  interval: 1m
   chart:
     spec:
       chart: eck-stack
