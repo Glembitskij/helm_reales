@@ -6,19 +6,19 @@ resources:
   - namespace.yaml
 configMapGenerator:
   - name: operator-values
-    namespace: flux-config
+    namespace: mynamespace
     files:
       - operator-values.yaml=operator-values.yaml
     options:
       disableNameSuffixHash: true
   - name: elastic-values
-    namespace: flux-config
+    namespace: mynamespace
     files:
       - elastic-values.yaml=elastic-values.yaml
     options:
       disableNameSuffixHash: true
   - name: kibana-values
-    namespace: flux-config
+    namespace: mynamespace
     files:
       - kibana-values.yaml=kibana-values.yaml
     options:
