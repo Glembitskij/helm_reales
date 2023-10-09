@@ -4,5 +4,5 @@ metadata:
   name: elastic-operator
   namespace: flux-config
 spec:
-  interval: 1m
+  interval: 5m
   url: https://helm.elastic.co
