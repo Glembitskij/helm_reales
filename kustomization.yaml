@@ -4,6 +4,7 @@ resources:
   - helmrelease.yaml
   - helmrepository.yaml
   - namespace.yaml
+  - secret.yaml
 configMapGenerator:
   - name: operator-values
     namespace: flux-config

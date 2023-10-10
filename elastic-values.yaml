@@ -1,6 +1,4 @@
 eck-elasticsearch:
-  annotations:
-    eck.k8s.elastic.co/license: basic
   version: 8.9.0
   nodeSets:
     - name: node
