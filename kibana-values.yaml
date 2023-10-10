@@ -1,4 +1,6 @@
 eck-kibana:
+  annotations:
+    eck.k8s.elastic.co/license: basic
   version: 8.9.0
   spec:
     count: 1
