@@ -15,9 +15,6 @@ eck-elasticsearch:
         spec:
           containers:
             - name: elasticsearch
-              resources:
-                limits:
-                  memory: 8Gi
           # Affinity/Anti-affinity settings for controlling the 'spreading' of Elasticsearch
           # pods across existing hosts.
           # ref: https://kubernetes.io/docs/concepts/configuration/assign-pod-node/#affinity-and-anti-affinity
@@ -63,9 +60,6 @@ eck-elasticsearch:
         spec:
           containers:
             - name: elasticsearch
-              resources:
-                limits:
-                  memory: 16Gi
           # Affinity/Anti-affinity settings for controlling the 'spreading' of Elasticsearch
           # pods across existing hosts.
           # ref: https://kubernetes.io/docs/concepts/configuration/assign-pod-node/#affinity-and-anti-affinity
@@ -111,9 +105,6 @@ eck-elasticsearch:
         spec:
           containers:
             - name: elasticsearch
-              resources:
-                limits:
-                  memory: 16Gi
           # Affinity/Anti-affinity settings for controlling the 'spreading' of Elasticsearch
           # pods across existing hosts.
           # ref: https://kubernetes.io/docs/concepts/configuration/assign-pod-node/#affinity-and-anti-affinity
@@ -159,9 +150,6 @@ eck-elasticsearch:
         spec:
           containers:
             - name: elasticsearch
-              resources:
-                limits:
-                  memory: 8Gi
           # Affinity/Anti-affinity settings for controlling the 'spreading' of Elasticsearch
           # pods across existing hosts.
           # ref: https://kubernetes.io/docs/concepts/configuration/assign-pod-node/#affinity-and-anti-affinity
