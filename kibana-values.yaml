@@ -1,17 +1,41 @@
+---
 eck-kibana:
-  version: 8.9.0
   spec:
+    # Count of Kibana replicas to create.
+    #
     count: 1
+
+    # Reference to ECK-managed Elasticsearch resource, ideally from {{ "elasticsearch.fullname" }}
+    #
     elasticsearchRef:
       name: es-quickstart-eck-elasticsearch
       # namespace: default
     http:
-      #service:
-      #  spec:
-      #    # Type of service to deploy for Kibana.
-      #    # This deploys a load balancer in a cloud service provider, where supported.
-      #    #
-      #    type: LoadBalancer
-      tls:
-        selfSignedCertificate:
-          disabled: true
+      service:
+        spec:
+          # Type of service to deploy for Kibana.
+          # This deploys a load balancer in a cloud service provider, where supported.
+          #
+          type: LoadBalancer
+      # tls:
+      #   selfSignedCertificate:
+      #     subjectAltNames:
+      #     - ip: 1.2.3.4
+      #     - dns: kibana.example.com
+#eck-kibana:
+#  version: 8.9.0
+#  spec:
+#    count: 1
+#    elasticsearchRef:
+#      name: es-quickstart-eck-elasticsearch
+#      # namespace: default
+#    http:
+#      #service:
+#      #  spec:
+#      #    # Type of service to deploy for Kibana.
+#      #    # This deploys a load balancer in a cloud service provider, where supported.
+#      #    #
+#      #    type: LoadBalancer
+#      tls:
+#        selfSignedCertificate:
+#          disabled: true
