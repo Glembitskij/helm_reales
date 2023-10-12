@@ -5,7 +5,7 @@ eck-elasticsearch:
     - name: masters
       count: 1
       config:
-        node.roles: ["master"]
+        # node.roles: ["master", "data"]
         node.store.allow_mmap: false
       podTemplate:
         spec:
