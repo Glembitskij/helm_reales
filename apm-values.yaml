@@ -1,9 +1,17 @@
 ---
-apm-server:
-  spec:
-  version: 7.15.0
-  count: 1
-  elasticsearchRef:
-    name: elasticsearch
-  kibanaRef:
-    name: elasticsearch
+extraEnvs:
+  - name: "ELASTICSEARCH_USERNAME"
+    value: elastic
+  - name: "ELASTICSEARCH_PASSWORD"
+    valueFrom:
+      secretKeyRef:
+        name: elasticsearch-es-elastic-user
+        key: elastic
+# apm-server:
+#   spec:
+#   version: 7.15.0
+#   count: 1
+#   elasticsearchRef:
+#     name: elasticsearch
+#   kibanaRef:
+#     name: elasticsearch
