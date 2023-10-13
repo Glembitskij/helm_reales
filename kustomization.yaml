@@ -24,3 +24,9 @@ configMapGenerator:
       - kibana-values.yaml=kibana-values.yaml
     options:
       disableNameSuffixHash: true
+  - name: apm-values
+    namespace: flux-config
+    files:
+      - apm-values.yaml=apm-values.yaml
+    options:
+      disableNameSuffixHash: true

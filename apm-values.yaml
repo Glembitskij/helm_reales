@@ -1,0 +1,9 @@
+---
+apm-server:
+  spec:
+  version: 7.15.0
+  count: 1
+  elasticsearchRef:
+    name: elasticsearch
+  kibanaRef:
+    name: elasticsearch

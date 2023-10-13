@@ -6,7 +6,7 @@ metadata:
   namespace: flux-config
 spec:
   targetNamespace: mynamespace
-  releaseName: elastic-operator
+  releaseName: telemetry
   interval: 1m
   chart:
     spec:
@@ -29,7 +29,7 @@ spec:
   dependsOn:
     - name: elastic-operator
   targetNamespace: mynamespace
-  releaseName: es-quickstart
+  releaseName: telemetry
   interval: 1m
   chart:
     spec:
@@ -45,3 +45,48 @@ spec:
     - kind: ConfigMap
       name: kibana-values
       valuesKey: kibana-values.yaml
+---
+apiVersion: kustomize.toolkit.fluxcd.io/v1beta2
+kind: Kustomization
+metadata:
+  name: apm-server
+  namespace: flux-config
+spec:
+  dependsOn:
+    - name: elastic-stack
+  interval: 1m0s
+  sourceRef:
+    kind: GitRepository
+    name: example-fc
+  path: ./
+  target:
+    kind: ApmServer
+    name: apm-server
+    namespace: mynamespace
+  prune: true
+  wait: true
+  timeout: 1m0s
+  targetNamespace: mynamespace
+# apiVersion: helm.toolkit.fluxcd.io/v2beta1
+# kind: HelmRelease
+# metadata:
+#   name: apm-server
+#   namespace: flux-config
+# spec:
+#   dependsOn:
+#     - name: elastic-stack
+#   targetNamespace: mynamespace
+#   releaseName: telemetry
+#   interval: 1m
+#   chart:
+#     spec:
+#       chart: apm-server
+#       version: "8.5.1"
+#       sourceRef:
+#         kind: HelmRepository
+#         name: elastic
+#   valuesFrom:
+#     - kind: ConfigMap
+#       name: apm-values
+#       valuesKey: apm-values.yaml
+
