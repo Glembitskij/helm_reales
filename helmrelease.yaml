@@ -46,46 +46,46 @@ spec:
       name: kibana-values
       valuesKey: kibana-values.yaml
 ---
-apiVersion: kustomize.toolkit.fluxcd.io/v1
-kind: Kustomization
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
 metadata:
   name: apm-server
   namespace: flux-config
 spec:
   dependsOn:
     - name: elastic-stack
-  interval: 1m0s
-  sourceRef:
-    kind: GitRepository
-    name: example-fc
-  path: ./
-  target:
-    name: apm-server
-    namespace: mynamespace
-  prune: true
-  wait: true
-  timeout: 1m0s
   targetNamespace: mynamespace
-# apiVersion: helm.toolkit.fluxcd.io/v2beta1
-# kind: HelmRelease
+  releaseName: telemetry
+  interval: 1m
+  chart:
+    spec:
+      chart: apm-server
+      version: "8.5.1"
+      sourceRef:
+        kind: HelmRepository
+        name: elastic
+  # valuesFrom:
+  #   - kind: ConfigMap
+  #     name: apm-values
+  #     valuesKey: apm-values.yaml
+# apiVersion: kustomize.toolkit.fluxcd.io/v1
+# kind: Kustomization
 # metadata:
 #   name: apm-server
 #   namespace: flux-config
 # spec:
 #   dependsOn:
 #     - name: elastic-stack
+#   interval: 1m0s
+#   sourceRef:
+#     kind: GitRepository
+#     name: example-fc
+#   path: ./
+#   target:
+#     name: apm-server
+#     namespace: mynamespace
+#   prune: true
+#   wait: true
+#   timeout: 1m0s
 #   targetNamespace: mynamespace
-#   releaseName: telemetry
-#   interval: 1m
-#   chart:
-#     spec:
-#       chart: apm-server
-#       version: "8.5.1"
-#       sourceRef:
-#         kind: HelmRepository
-#         name: elastic
-#   valuesFrom:
-#     - kind: ConfigMap
-#       name: apm-values
-#       valuesKey: apm-values.yaml
 
