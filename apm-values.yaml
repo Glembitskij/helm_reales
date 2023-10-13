@@ -7,6 +7,18 @@ extraEnvs:
       secretKeyRef:
         name: elasticsearch-es-elastic-user
         key: elastic
+apmConfig:
+  apm-server.yml: |
+    apm-server:
+      host: "0.0.0.0:8200"
+
+    queue: {}
+
+    output.elasticsearch:
+      hosts: ["https://elasticsearch-es-masters:9200"]
+      username: "${ELASTICSEARCH_USERNAME}"
+      password: "${ELASTICSEARCH_PASSWORD}"
+
 # apm-server:
 #   spec:
 #   version: 7.15.0
