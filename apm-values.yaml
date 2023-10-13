@@ -18,6 +18,7 @@ apmConfig:
       hosts: ["https://elasticsearch-es-masters:9200"]
       username: "${ELASTICSEARCH_USERNAME}"
       password: "${ELASTICSEARCH_PASSWORD}"
+      ssl.verification_mode: none
 
 # apm-server:
 #   spec:
