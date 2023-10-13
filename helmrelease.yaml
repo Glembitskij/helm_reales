@@ -6,7 +6,7 @@ metadata:
   namespace: flux-config
 spec:
   targetNamespace: mynamespace
-  releaseName: telemetry
+  releaseName: operator-release
   interval: 1m
   chart:
     spec:
@@ -29,7 +29,7 @@ spec:
   dependsOn:
     - name: elastic-operator
   targetNamespace: mynamespace
-  releaseName: telemetry
+  releaseName: esk-release
   interval: 1m
   chart:
     spec:
@@ -55,7 +55,7 @@ spec:
   dependsOn:
     - name: elastic-stack
   targetNamespace: mynamespace
-  releaseName: telemetry
+  releaseName: apm-release
   interval: 1m
   chart:
     spec:
