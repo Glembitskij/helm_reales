@@ -64,10 +64,10 @@ spec:
       sourceRef:
         kind: HelmRepository
         name: elastic
-    valuesFrom:
-      - kind: ConfigMap
-        name: apm-values
-        valuesKey: apm-values.yaml
+      valuesFrom:
+        - kind: ConfigMap
+          name: apm-values
+          valuesKey: apm-values.yaml
 # apiVersion: kustomize.toolkit.fluxcd.io/v1
 # kind: Kustomization
 # metadata:
