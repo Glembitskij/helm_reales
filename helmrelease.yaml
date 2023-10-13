@@ -60,7 +60,6 @@ spec:
     name: example-fc
   path: ./
   target:
-    kind: ApmServer
     name: apm-server
     namespace: mynamespace
   prune: true
