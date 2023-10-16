@@ -86,8 +86,8 @@ spec:
       version: "0.72.0"
       sourceRef:
         kind: HelmRepository
-        name: elastic
+        name: open-telemetry
   valuesFrom:
     - kind: ConfigMap
-      name: apm-values
-      valuesKey: apm-values.yaml
+      name: otlp-values
+      valuesKey: otlp-values.yaml
