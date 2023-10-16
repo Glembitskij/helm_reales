@@ -11,7 +11,7 @@ eck-kibana:
       tls:
         selfSignedCertificate:
           disabled: true
-    config:
-      xpack.fleet.packages:
-        - name: apm
-          version: latest
+    # config:
+    #   xpack.fleet.packages:
+    #     - name: apm
+    #       version: latest
