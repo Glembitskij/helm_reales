@@ -1,0 +1,45 @@
+config:
+  extensions:
+    basicauth/server:
+      htpasswd:
+        inline: |
+          omfo247:f1hN)P*~nK~5GX6
+    health_check:
+  receivers:
+    otlp:
+      protocols:
+        http:
+          cors:
+            allowed_origins: ["*"]
+            allowed_headers: ["*"]
+          auth:
+            authenticator: basicauth/server
+        grpc:
+  exporters:
+    otlp/es:
+      endpoint: https://telemetry-apm-http:8200
+      tls:
+        insecure_skip_verify: true
+    logging:
+      loglevel: debug
+  service:
+    extensions: [basicauth/server, health_check]
+    pipelines:
+      traces:
+        receivers:
+          - otlp
+        exporters:
+          - logging
+          - otlp/es
+      metrics:
+        receivers:
+          - otlp
+        exporters:
+          - logging
+          - otlp/es
+      logs:
+        receivers:
+          - otlp
+        exporters:
+          - logging
+          - otlp/es

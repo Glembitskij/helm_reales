@@ -30,3 +30,9 @@ configMapGenerator:
       - apm-values.yaml=apm-values.yaml
     options:
       disableNameSuffixHash: true
+  - name: otlp-values
+    namespace: flux-config
+    files:
+      - otlp-values.yaml=otlp-values.yaml
+    options:
+      disableNameSuffixHash: true

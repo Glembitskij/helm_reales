@@ -7,3 +7,12 @@ metadata:
 spec:
   interval: 1m
   url: https://helm.elastic.co
+---
+apiVersion: source.toolkit.fluxcd.io/v1beta2
+kind: HelmRepository
+metadata:
+  name: opentelemetry
+  namespace: flux-config
+spec:
+  interval: 1m
+  url: https://open-telemetry.github.io/opentelemetry-helm-charts

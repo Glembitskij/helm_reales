@@ -68,24 +68,26 @@ spec:
     - kind: ConfigMap
       name: apm-values
       valuesKey: apm-values.yaml
-# apiVersion: kustomize.toolkit.fluxcd.io/v1
-# kind: Kustomization
-# metadata:
-#   name: apm-server
-#   namespace: flux-config
-# spec:
-#   dependsOn:
-#     - name: elastic-stack
-#   interval: 1m0s
-#   sourceRef:
-#     kind: GitRepository
-#     name: example-fc
-#   path: ./
-#   target:
-#     name: apm-server
-#     namespace: mynamespace
-#   prune: true
-#   wait: true
-#   timeout: 1m0s
-#   targetNamespace: mynamespace
-
+---
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: otlp-collector
+  namespace: flux-config
+spec:
+  dependsOn:
+    - name: apm-server
+  targetNamespace: mynamespace
+  releaseName: otlp-release
+  interval: 1m
+  chart:
+    spec:
+      chart: opentelemetry-collector
+      version: "0.72.0"
+      sourceRef:
+        kind: HelmRepository
+        name: elastic
+  valuesFrom:
+    - kind: ConfigMap
+      name: apm-values
+      valuesKey: apm-values.yaml
