@@ -43,7 +43,7 @@ config:
         grpc:
   exporters:
     otlp/es:
-      endpoint: https://telemetry-apm-http:8200
+      endpoint: http://apm-release-apm-server:8200
       tls:
         insecure_skip_verify: true
     logging:
