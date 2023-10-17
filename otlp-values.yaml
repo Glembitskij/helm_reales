@@ -44,8 +44,8 @@ config:
   exporters:
     otlp/es:
       endpoint: http://apm-release-apm-server:8200
-      tls:
-        insecure_skip_verify: true
+      # tls:
+      #   insecure_skip_verify: true
     logging:
       loglevel: debug
   service:
