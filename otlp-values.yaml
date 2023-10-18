@@ -43,7 +43,10 @@ config:
         grpc:
   exporters:
     otlp/es:
-      endpoint: http://apm-release-apm-server:8200
+      endpoint: apm-release-apm-server:8200
+      tls:
+        insecure: false
+        insecure_skip_verify: true
       # tls:
       #   insecure_skip_verify: true
     logging:
