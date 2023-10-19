@@ -30,7 +30,7 @@ config:
         inline: |
           omfo247:f1hN)P*~nK~5GX6
     health_check:
-      endpoint: localhost:13133
+      #endpoint: localhost:13133
   receivers:
     otlp:
       protocols:
@@ -41,7 +41,7 @@ config:
           auth:
             authenticator: basicauth/server
         grpc:
-          endpoint: localhost:4317
+          #endpoint: localhost:4317
   exporters:
     otlp/es:
       endpoint: apm-release-apm-server:8200
