@@ -15,3 +15,16 @@ eck-kibana:
       xpack.fleet.packages:
         - name: apm
           version: latest
+      xpack.fleet.agentPolicies:
+        - name: otlp
+          package_policies:
+            - name: otlp
+              package:
+                name: apm
+                inputs:
+                  - type: apm
+                    vars:
+                      - name: host
+                        value: "apm-release-apm-server:8200"
+                      - name: url
+                        value: "http://apm-release-apm-server:8200"
