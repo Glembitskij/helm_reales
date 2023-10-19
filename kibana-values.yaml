@@ -22,7 +22,7 @@ eck-kibana:
               package:
                 name: apm
                 inputs:
-                  - type:
+                  - type: apm
                     enabled: true
                     vars:
                       - name: host
