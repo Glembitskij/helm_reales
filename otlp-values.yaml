@@ -50,7 +50,7 @@ config:
       # tls:
       #   insecure_skip_verify: true
     logging:
-      loglevel: debug
+      verbosity: detailed
   service:
     extensions: [basicauth/server, health_check]
     pipelines:
