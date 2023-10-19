@@ -41,7 +41,7 @@ config:
           auth:
             authenticator: basicauth/server
         grpc:
-          endpoint: otlp-release-opentelemetry-collector:4317
+         #endpoint: otlp-release-opentelemetry-collector:4317
   exporters:
     otlp/es:
       endpoint: apm-release-apm-server:8200
