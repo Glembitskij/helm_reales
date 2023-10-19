@@ -5,6 +5,7 @@ resources:
   - helmrepository.yaml
   - namespace.yaml
   - secret.yaml
+  - open-telemetry_deploy.yaml
 configMapGenerator:
   - name: operator-values
     namespace: flux-config
