@@ -18,11 +18,12 @@ eck-kibana:
       xpack.fleet.agentPolicies:
         - name: otlp
           package_policies:
-            - name: otlp
+            - name: APM Policy
               package:
                 name: apm
                 inputs:
-                  - type: apm
+                  - type:
+                    enabled: true
                     vars:
                       - name: host
                         value: "apm-release-apm-server:8200"
