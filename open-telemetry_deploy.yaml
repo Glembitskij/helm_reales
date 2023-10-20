@@ -29,19 +29,19 @@ spec:
               mountPath: "/app/OTEL_DIAGNOSTICS.json"
               subPath: OTEL_DIAGNOSTICS.json
               readOnly: true
-  volumes:
-    - name: open-telemetry-exemple-settings
-      configMap:
-        name: open-telemetry-exemple-settings
-        items:
-          - key: appsettings
-            path: appsettings.json
-    - name: open-telemetry-diagnostic-settings
-      configMap:
-        name: open-telemetry-diagnostic-settings
-        items:
-          - key: OTEL_DIAGNOSTICS
-            path: OTEL_DIAGNOSTICS.json
+      volumes:
+        - name: open-telemetry-exemple-settings
+          configMap:
+            name: open-telemetry-exemple-settings
+            items:
+              - key: appsettings
+                path: appsettings.json
+        - name: open-telemetry-diagnostic-settings
+          configMap:
+            name: open-telemetry-diagnostic-settings
+            items:
+              - key: OTEL_DIAGNOSTICS
+                path: OTEL_DIAGNOSTICS.json
 ---
 apiVersion: v1
 kind: ConfigMap
