@@ -34,13 +34,13 @@ spec:
           configMap:
             name: open-telemetry-exemple-settings
             items:
-              - key: appsettings
+              - key: appsettings.json
                 path: appsettings.json
         - name: open-telemetry-diagnostic-settings
           configMap:
             name: open-telemetry-diagnostic-settings
             items:
-              - key: OTEL_DIAGNOSTICS
+              - key: OTEL_DIAGNOSTICS.json
                 path: OTEL_DIAGNOSTICS.json
 ---
 apiVersion: v1
