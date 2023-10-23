@@ -29,7 +29,7 @@ spec:
   dependsOn:
     - name: elastic-operator
   targetNamespace: omni
-  releaseName: esk-release
+  releaseName: eck-release
   interval: 1m
   chart:
     spec:
