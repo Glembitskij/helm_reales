@@ -4,7 +4,7 @@ eck-kibana:
   spec:
     count: 1
     elasticsearchRef:
-      name: telemetry-es
+      name: elasticsearch
     http:
       tls:
         selfSignedCertificate:
