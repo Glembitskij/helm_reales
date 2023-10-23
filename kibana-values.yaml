@@ -1,6 +1,6 @@
 ---
 eck-kibana:
-  fullnameOverride: telemetry
+  fullnameOverride: telemetry-kb
   spec:
     count: 1
     elasticsearchRef:
