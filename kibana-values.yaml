@@ -1,6 +1,6 @@
 ---
 eck-kibana:
-  fullnameOverride: telemetry-kb
+  fullnameOverride: telemetry
   spec:
     count: 1
     elasticsearchRef:
@@ -26,6 +26,6 @@ eck-kibana:
                 enabled: true
                 vars:
                   - name: host
-                    value: telemetry-apm-server:8200
+                    value: telemetry-apm:8200
                   - name: url
-                    value: http://telemetry-apm-server:8200
+                    value: http://telemetry-apm:8200

@@ -45,7 +45,7 @@ config:
           endpoint: ${env:MY_POD_IP}:4317
   exporters:
     otlp/es:
-      endpoint: telemetry-apm-server:8200
+      endpoint: telemetry-apm:8200
       tls:
         insecure: true
     logging:
