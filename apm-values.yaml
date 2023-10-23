@@ -1,11 +1,12 @@
 ---
+fullnameOverride: telemetry-apm
 extraEnvs:
   - name: "ELASTICSEARCH_USERNAME"
     value: elastic
   - name: "ELASTICSEARCH_PASSWORD"
     valueFrom:
       secretKeyRef:
-        name: elasticsearch-es-elastic-user
+        name: telemetry-es-elastic-user
         key: elastic
 apmConfig:
   apm-server.yml: |
@@ -15,16 +16,7 @@ apmConfig:
     queue: {}
 
     output.elasticsearch:
-      hosts: ["https://elasticsearch-es-masters:9200"]
+      hosts: ["https://telemetry-es-masters:9200"]
       username: "${ELASTICSEARCH_USERNAME}"
       password: "${ELASTICSEARCH_PASSWORD}"
       ssl.verification_mode: none
-
-# apm-server:
-#   spec:
-#   version: 7.15.0
-#   count: 1
-#   elasticsearchRef:
-#     name: elasticsearch
-#   kibanaRef:
-#     name: elasticsearch

@@ -1,13 +1,11 @@
 ---
 eck-kibana:
+  fullnameOverride: telemetry-kb
   spec:
     count: 1
     elasticsearchRef:
-      name: elasticsearch
+      name: telemetry-es
     http:
-      #service:
-      #  spec:
-      #    type: LoadBalancer
       tls:
         selfSignedCertificate:
           disabled: true
@@ -17,10 +15,10 @@ eck-kibana:
           version: latest
       xpack.fleet.agentPolicies:
         - name: otlp
-          namespace: mynamespace
+          namespace: omni
           package_policies:
             - name: APM Policy
-              namespace: mynamespace
+              namespace: omni
               package:
                 name: apm
               inputs:
@@ -28,6 +26,6 @@ eck-kibana:
                 enabled: true
                 vars:
                   - name: host
-                    value: apm-release-apm-server:8200
+                    value: telemetry-apm-server:8200
                   - name: url
-                    value: http://apm-release-apm-server:8200
+                    value: http://telemetry-apm-server:8200

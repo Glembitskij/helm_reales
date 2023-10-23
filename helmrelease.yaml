@@ -5,7 +5,7 @@ metadata:
   name: elastic-operator
   namespace: flux-config
 spec:
-  targetNamespace: mynamespace
+  targetNamespace: omni
   releaseName: operator-release
   interval: 1m
   chart:
@@ -28,7 +28,7 @@ metadata:
 spec:
   dependsOn:
     - name: elastic-operator
-  targetNamespace: mynamespace
+  targetNamespace: omni
   releaseName: esk-release
   interval: 1m
   chart:
@@ -54,7 +54,7 @@ metadata:
 spec:
   dependsOn:
     - name: elastic-stack
-  targetNamespace: mynamespace
+  targetNamespace: omni
   releaseName: apm-release
   interval: 1m
   chart:
@@ -77,7 +77,7 @@ metadata:
 spec:
   dependsOn:
     - name: apm-server
-  targetNamespace: mynamespace
+  targetNamespace: omni
   releaseName: otlp-release
   interval: 1m
   chart:

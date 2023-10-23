@@ -1,5 +1,5 @@
-managedNamespaces: [mynamespace]
-
+managedNamespaces: [omni]
+fullnameOverride: elastic-operator
 createClusterScopedResources: false
 
 config:

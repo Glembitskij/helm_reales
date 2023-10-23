@@ -1,5 +1,6 @@
 ---
 eck-elasticsearch:
+  fullnameOverride: telemetry-es
   version: 8.9.0
   nodeSets:
     - name: masters
@@ -20,7 +21,7 @@ eck-elasticsearch:
             resources:
               requests:
                 storage: 1Ti
-            storageClassName: managed
+            storageClassName: managed-premium
   http:
     tls:
       selfSignedCertificate:

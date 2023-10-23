@@ -1,4 +1,5 @@
-mode: "deployment"
+mode: deployment
+fullnameOverride: otelcollector
 ports:
   otlp:
     enabled: true
@@ -44,12 +45,9 @@ config:
           endpoint: ${env:MY_POD_IP}:4317
   exporters:
     otlp/es:
-      endpoint: apm-release-apm-server:8200
+      endpoint: telemetry-apm-server:8200
       tls:
         insecure: true
-      #  insecure_skip_verify: true
-      # tls:
-      #   insecure_skip_verify: true
     logging:
       verbosity: detailed
   service:
