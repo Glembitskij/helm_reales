@@ -53,9 +53,9 @@ data:
     {
       "Logging": {
         "LogLevel": {
-          "Default": "Info",
-          "System": "Info",
-          "Microsoft": "Info"
+          "Default": "Information",
+          "System": "Information",
+          "Microsoft": "Information"
         }
       },
       "Otlp": {
