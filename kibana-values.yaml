@@ -1,9 +1,10 @@
 ---
 eck-kibana:
+  fullnameOverride: telemetry
   spec:
     count: 1
     elasticsearchRef:
-      name: telemetry-es
+      name: telemetry
     http:
       tls:
         selfSignedCertificate:

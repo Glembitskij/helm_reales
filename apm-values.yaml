@@ -6,7 +6,7 @@ extraEnvs:
   - name: "ELASTICSEARCH_PASSWORD"
     valueFrom:
       secretKeyRef:
-        name: telemetry-es-es-elastic-user
+        name: telemetry-es-elastic-user
         key: elastic
 apmConfig:
   apm-server.yml: |

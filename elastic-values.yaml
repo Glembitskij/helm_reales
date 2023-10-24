@@ -1,6 +1,6 @@
 ---
 eck-elasticsearch:
-  fullnameOverride: "telemetry-es"
+  fullnameOverride: telemetry
   version: 8.9.0
   nodeSets:
     - name: masters
