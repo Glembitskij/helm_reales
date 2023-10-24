@@ -15,9 +15,13 @@ eck-kibana:
           version: latest
       xpack.fleet.agentPolicies:
         - name: otlp
+          id: default-apm
+          is_default_fleet_server: true
+          is_managed: false
           namespace: omni
           package_policies:
             - name: APM Policy
+              id: default
               namespace: omni
               package:
                 name: apm
